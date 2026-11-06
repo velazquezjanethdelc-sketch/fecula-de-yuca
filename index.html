@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fécula de Yuca | Producto Natural</title>
+
+    <style>
+        /* ==============================
+           ESTILOS GENERALES
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fffdf7;
+            color: #333;
+        }
+
+
+        /* ==============================
+           ENCABEZADO
+        ============================== */
+
+        header {
+            background-color: #4f772d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0 0 15px;
+            font-size: 32px;
+        }
+
+
+        /* ==============================
+           MENÚ
+        ============================== */
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        nav button {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 10px 14px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        nav button:hover {
+            background-color: #31572c;
+        }
+
+
+        /* ==============================
+           PÁGINAS
+        ============================== */
+
+        .pagina {
+            display: none;
+            min-height: 550px;
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 25px;
+            text-align: center;
+        }
+
+        /* La página seleccionada se muestra */
+        .pagina.activa {
+            display: block;
+        }
+
+        h2 {
+            color: #4f772d;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #4f772d;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 850px;
+            margin: 15px auto;
+        }
+
+
+        /* ==============================
+           IMÁGENES
+        ============================== */
+
+        .imagen-principal {
+            width: 90%;
+            max-width: 750px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 20px auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+
+        /* ==============================
+           BOTONES
+        ============================== */
+
+        .boton {
+            background-color: #4f772d;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            margin: 20px 5px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background-color: #31572c;
+        }
+
+
+        /* ==============================
+           TARJETAS
+        ============================== */
+
+        .tarjetas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .tarjeta {
+            background-color: white;
+            width: 260px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+        }
+
+        .tarjeta p {
+            font-size: 16px;
+        }
+
+
+        /* ==============================
+           OBJETIVOS
+        ============================== */
+
+        .objetivo {
+            background-color: #f1f8e9;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+            border-left: 6px solid #4f772d;
+        }
+
+
+        /* ==============================
+           PRODUCTO
+        ============================== */
+
+        .producto {
+            background-color: #f1f8e9;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .producto .imagen-principal {
+            width: 100%;
+            max-width: 550px;
+        }
+
+        .precio {
+            font-size: 25px;
+            color: #31572c;
+            font-weight: bold;
+        }
+
+
+        /* ==============================
+           GALERÍA
+        ============================== */
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .galeria img {
+            width: 280px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+
+        /* ==============================
+           CONTACTO
+        ============================== */
+
+        .caja-contacto {
+            background-color: #f1f8e9;
+            max-width: 650px;
+            padding: 30px;
+            margin: 30px auto;
+            border-radius: 15px;
+        }
+
+
+        /* ==============================
+           PIE DE PÁGINA
+        ============================== */
+
+        footer {
+            background-color: #31572c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            font-size: 15px;
+            margin: 5px;
+        }
+
+
+        /* ==============================
+           CELULARES
+        ============================== */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            nav button {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            .pagina {
+                padding: 35px 15px;
+            }
+
+            .imagen-principal {
+                width: 100%;
+                height: 250px;
+            }
+
+            .tarjeta {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =========================
+         ENCABEZADO Y MENÚ
+    ========================== -->
+
+    <header>
+
+        <h1>🌿 Fécula de Yuca</h1>
+
+        <nav>
+            <button onclick="mostrarPagina('inicio')">Inicio</button>
+
+            <button onclick="mostrarPagina('que-es')">
+                ¿Qué es?
+            </button>
+
+            <button onclick="mostrarPagina('objetivos')">
+                Objetivos
+            </button>
+
+            <button onclick="mostrarPagina('materiales')">
+                Materiales
+            </button>
+
+            <button onclick="mostrarPagina('producto')">
+                Nuestro producto
+            </button>
+
+            <button onclick="mostrarPagina('usos')">
+                Usos
+            </button>
+
+            <button onclick="mostrarPagina('galeria')">
+                Galería
+            </button>
+
+            <button onclick="mostrarPagina('contacto')">
+                Contacto
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         PÁGINA: INICIO
+    ========================== -->
+
+    <section id="inicio" class="pagina activa">
+
+        <h2>¡Bienvenidos!</h2>
+
+        <!-- CAMBIA inicio.jpg POR EL NOMBRE DE TU FOTO -->
+        <img src="imagenes/inicio.jpg"
+             alt="Yuca y fécula de yuca"
+             class="imagen-principal">
+
+        <p>
+            Te damos la bienvenida a nuestra página dedicada a la
+            fécula de yuca, un producto de origen vegetal obtenido
+            a partir de la raíz de la yuca.
+        </p>
+
+        <p>
+            Aquí podrás conocer más sobre nuestro producto, sus
+            características, algunos de sus usos y la forma de
+            contactarnos para realizar una compra.
+        </p>
+
+        <button class="boton"
+                onclick="mostrarPagina('producto')">
+            Conoce nuestro producto
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         PÁGINA: ¿QUÉ ES?
+    ========================== -->
+
+    <section id="que-es" class="pagina">
+
+        <h2>¿Qué es la fécula de yuca?</h2>
+
+        <img src="imagenes/yuca.jpg"
+             alt="Raíz de yuca"
+             class="imagen-principal">
+
+        <p>
+            La fécula de yuca es un producto obtenido del almidón
+            presente en la raíz de la yuca. La yuca es una planta cuya
+            raíz contiene una cantidad importante de almidón, un
+            carbohidrato que puede utilizarse en diferentes productos.
+        </p>
+
+        <p>
+            La fécula se caracteriza por su textura fina y puede ser
+            utilizada como ingrediente en distintas preparaciones.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         PÁGINA: OBJETIVOS
+    ========================== -->
+
+    <section id="objetivos" class="pagina">
+
+        <h2>Objetivos</h2>
+
+        <div class="objetivo">
+
+            <h3>🎯 Objetivo general</h3>
+
+            <p>
+                Conocer las propiedades y aplicaciones de la fécula
+                obtenida de la yuca y presentar este producto como
+                una alternativa de origen vegetal.
+            </p>
+
+        </div>
+
+
+        <div class="objetivo">
+
+            <h3>📌 Objetivos específicos</h3>
+
+            <p>
+                • Identificar las principales características de la yuca
+                y su contenido de almidón.
+            </p>
+
+            <p>
+                • Dar a conocer algunos usos que puede tener la fécula
+                de yuca.
+            </p>
+
+            <p>
+                • Presentar nuestro producto y ofrecer información a las
+                personas interesadas en adquirirlo.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PÁGINA: MATERIALES
+    ========================== -->
+
+    <section id="materiales" class="pagina">
+
+        <h2>Materiales relacionados con nuestro proyecto</h2>
+
+        <p>
+            Para trabajar con la yuca y obtener productos a base de su
+            almidón, se pueden utilizar diferentes materiales y utensilios.
+        </p>
+
+        <div class="tarjetas">
+
+            <div class="tarjeta">
+                <h3>🌿 Yuca</h3>
+                <p>
+                    Es la materia prima de la cual se obtiene el almidón.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>💧 Agua</h3>
+                <p>
+                    Se utiliza durante diferentes etapas de preparación.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🥣 Recipiente</h3>
+                <p>
+                    Permite colocar y conservar los materiales.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🥄 Cuchara</h3>
+                <p>
+                    Es útil para mezclar los ingredientes.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🔍 Colador</h3>
+                <p>
+                    Puede utilizarse para separar materiales durante el proceso.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🍴 Rayador</h3>
+                <p>
+                    Puede utilizarse para procesar la raíz de yuca.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PÁGINA: PRODUCTO
+    ========================== -->
+
+    <section id="producto" class="pagina">
+
+        <h2>Nuestro producto</h2>
+
+        <div class="producto">
+
+            <!-- PON AQUÍ LA FOTO DE TU PRODUCTO -->
+            <img src="imagenes/producto.jpg"
+                 alt="Producto de fécula de yuca"
+                 class="imagen-principal">
+
+            <h3>🌿 Fécula de Yuca Natural</h3>
+
+            <p>
+                Ofrecemos fécula de yuca como un producto de origen
+                vegetal. Nuestro objetivo es dar a conocer este producto
+                y sus posibles aplicaciones.
+            </p>
+
+            <p>
+                <strong>Presentación:</strong> Puedes escribir aquí el
+                tamaño o cantidad de tu producto.
+            </p>
+
+            <p class="precio">
+                Precio: $35
+            </p>
+
+            <p>
+                <strong>Disponibilidad:</strong> Consulta con nosotros
+                para conocer la disponibilidad del producto.
+            </p>
+
+            <button class="boton"
+                    onclick="mostrarPagina('contacto')">
+                🛒 Quiero comprar
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PÁGINA: USOS
+    ========================== -->
+
+    <section id="usos" class="pagina">
+
+        <h2>Algunos usos de la fécula de yuca</h2>
+
+        <img src="imagenes/uso1.jpg"
+             alt="Usos de la fécula de yuca"
+             class="imagen-principal">
+
+        <div class="tarjetas">
+
+            <div class="tarjeta">
+
+                <h3>🥖 Panadería</h3>
+
+                <p>
+                    Puede utilizarse como ingrediente en diferentes
+                    productos de panadería.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <h3>🍪 Productos horneados</h3>
+
+                <p>
+                    Puede incorporarse en algunas preparaciones de
+                    productos horneados.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <h3>🍲 Espesante</h3>
+
+                <p>
+                    Puede utilizarse para dar consistencia a algunas
+                    preparaciones.
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <h3>🧁 Repostería</h3>
+
+                <p>
+                    Puede formar parte de diferentes recetas y productos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PÁGINA: GALERÍA
+    ========================== -->
+
+    <section id="galeria" class="pagina">
+
+        <h2>Galería de nuestro producto</h2>
+
+        <div class="galeria">
+
+            <!-- CAMBIA LOS NOMBRES POR LOS DE TUS FOTOS -->
+
+            <img src="imagenes/galeria1.jpg"
+                 alt="Imagen de yuca">
+
+            <img src="imagenes/galeria2.jpg"
+                 alt="Imagen de fécula de yuca">
+
+            <img src="imagenes/galeria3.jpg"
+                 alt="Nuestro producto">
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PÁGINA: CONTACTO
+    ========================== -->
+
+    <section id="contacto" class="pagina">
+
+        <h2>Contáctanos</h2>
+
+        <p>
+            Si deseas conocer más sobre nuestro producto o realizar
+            una compra, puedes comunicarte con nosotros.
+        </p>
+
+        <div class="caja-contacto">
+
+            <!-- CAMBIA ESTA INFORMACIÓN POR LA TUYA -->
+
+            <p>📱 Teléfono: 9331308133</p>
+
+            <p>📧 Correo: dannaguadalupe@gmail.com</p>
+
+            <p>📍 Ubicación: Tabasco, México</p>
+
+            <p>
+                🌿 ¡Gracias por visitar nuestra página y conocer
+                nuestro producto!
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================== -->
+
+    <footer>
+
+        <p>🌿 Fécula de Yuca | Producto de origen vegetal</p>
+
+        <p>© 2026 Todos los derechos reservados.</p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         CAMBIA DE "PÁGINA"
+    ========================== -->
+
+    <script>
+
+        function mostrarPagina(idPagina) {
+
+            // Busca todas las páginas
+            const paginas =
+                document.querySelectorAll('.pagina');
+
+            // Oculta todas las páginas
+            paginas.forEach(function(pagina) {
+                pagina.classList.remove('activa');
+            });
+
+            // Muestra solamente la página seleccionada
+            document
+                .getElementById(idPagina)
+                .classList.add('activa');
+
+            // Lleva la pantalla hacia arriba
+            window.scrollTo(0, 0);
+        }
+
+    </script>
+
+</body>
+</html>
